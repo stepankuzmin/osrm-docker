@@ -3,10 +3,10 @@ MAINTAINER Stepan Kuzmin <to.stepan.kuzmin@gmail.com>
 
 ENV OSRM_VERSION 5.4.1
 
-RUN apt-get -yqq update
-RUN apt-get -yqq install \
+RUN apt-get -yqq update && apt-get -yqq install \
   build-essential \
   cmake \
+  curl \
   git \
   libboost-all-dev \
   libbz2-dev \
@@ -14,7 +14,7 @@ RUN apt-get -yqq install \
   libluabind-dev \
   libstxxl-dev \
   libstxxl1v5 \
-  libtbb-dev curl
+  libtbb-dev \
   libxml2-dev \
   libzip-dev \
   lua5.1 \
