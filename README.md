@@ -1,5 +1,6 @@
 # OSRM Docker
 
+[![Build Status](https://travis-ci.org/stepankuzmin/osrm-docker.svg?branch=master)](https://travis-ci.org/stepankuzmin/osrm-docker)
 [![Docker Stars](https://img.shields.io/docker/stars/stepankuzmin/osrm.svg)]()
 [![Docker Pulls](https://img.shields.io/docker/pulls/stepankuzmin/osrm.svg)]()
 [![Docker Automated buil](https://img.shields.io/docker/automated/stepankuzmin/osrm.svg)]()
