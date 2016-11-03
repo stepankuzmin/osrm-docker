@@ -1,9 +1,10 @@
 FROM ubuntu:16.04
 MAINTAINER Stepan Kuzmin <to.stepan.kuzmin@gmail.com>
 
-ENV OSRM_VERSION 5.4.1
+ENV OSRM_VERSION 5.4.2
 
-RUN apt-get -yqq update && apt-get -yqq install \
+RUN apt-get -yqq update \
+  && apt-get -yqq install \
   build-essential \
   cmake \
   curl \
@@ -31,7 +32,8 @@ RUN mkdir -p /usr/src/osrm-backend/build \
   && mkdir /data \
   && cp -r /usr/src/osrm-backend/profiles /data
 
-COPY entrypoint.sh entrypoint.sh
+COPY entrypoint.sh /data/entrypoint.sh
+COPY profiles/* /data/profiles
 
 EXPOSE 5000
 VOLUME /data
