@@ -28,9 +28,9 @@ You can also mount a host directory as a data volume:
 ```shell
 docker run -d \
   -p 5000:5000 \
-  -v /data:/data \
-  -v /extracts:/extracts \
-  -v /profiles:/profiles \
+  -v /srv/osrm/moscow-foot/data:/data \
+  -v /srv/osrm/moscow-foot/extracts:/extracts \
+  -v /srv/osrm/moscow-foot/profiles:/profiles \
   --name osrm \
   stepankuzmin/osrm
 ```

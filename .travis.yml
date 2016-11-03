@@ -7,7 +7,7 @@ services:
 
 install:
   - docker build -t osrm .
-  - docker run -d -p 127.0.0.1:5000:5000 --name osrm osrm
+  - docker run -d -p 127.0.0.1:5000:5000 --name osrm osrm "https://s3.amazonaws.com/metro-extracts.mapzen.com/moscow_russia.osm.pbf" car
 
 script:
   - docker ps | grep -q osrm

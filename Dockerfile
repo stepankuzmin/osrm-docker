@@ -32,7 +32,7 @@ RUN mkdir -p /usr/src/osrm-backend/build \
   && mkdir /data \
   && mkdir /profiles \
   && mkdir /extracts \
-  && cp -r /usr/src/osrm-backend/profiles /profiles \
+  && cp -r /usr/src/osrm-backend/profiles/* /profiles \
   && rm -rf /usr/src/osrm-backend
 
 COPY entrypoint.sh entrypoint.sh
