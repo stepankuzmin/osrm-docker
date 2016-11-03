@@ -17,9 +17,10 @@ trap _sig SIGKILL SIGTERM SIGHUP SIGINT EXIT
 
 if [ ! -f $OSRM ]; then
   if [ ! -f $PBF ]; then
-    curl $URL > $PBF
+    curl $URL > /extracts/$PBF
   fi
-  osrm-extract -p profiles/$PROFILE $PBF
+  cd /data
+  osrm-extract -p /profiles/$PROFILE /extracts/$PBF
   osrm-contract $OSRM
 fi
 

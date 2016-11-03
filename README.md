@@ -28,11 +28,13 @@ You can also mount a host directory as a data volume:
 docker run -d \
   -p 5000:5000 \
   -v /data:/data \
+  -v /extracts:/extracts \
+  -v /profiles:/profiles \
   --name osrm \
   stepankuzmin/osrm
 ```
 
-This command mounts the host directory, `/data`, into the container at `/data`.
+This command mounts the host directory, `/data`, into the container at `/data`, `/extracts` into `/extracts` and `/profiles` into `/profiles`.
 
 ## Documentation
 

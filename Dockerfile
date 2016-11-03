@@ -30,13 +30,17 @@ RUN mkdir -p /usr/src/osrm-backend/build \
   && cmake --build . \
   && cmake --build . --target install \
   && mkdir /data \
-  && cp -r /usr/src/osrm-backend/profiles /data
+  && mkdir /profiles \
+  && mkdir /extracts \
+  && cp -r /usr/src/osrm-backend/profiles /profiles \
+  && rm -rf /usr/src/osrm-backend
 
-COPY entrypoint.sh /data/entrypoint.sh
-COPY profiles/* /data/profiles
+COPY entrypoint.sh entrypoint.sh
+COPY profiles/* /profiles
 
 EXPOSE 5000
 VOLUME /data
+VOLUME /profiles
+VOLUME /extracts
 
-ENTRYPOINT ["/data/entrypoint.sh"]
-CMD ["bash", "entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
