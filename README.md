@@ -13,7 +13,7 @@ docker run -d -p 5000:5000 stepankuzmin/osrm <url> <profile>
 
 Where `<url>` is osm.pbf url and `<profile>` is one of the [OSRM profiles](https://github.com/Project-OSRM/osrm-backend/tree/master/profiles) (`foot` is default) or one of above:
 
-* stepless -- default foot profile excluding `steps`.
+* stepless - default foot profile excluding `steps`.
 
 ## Usage:
 
@@ -28,14 +28,14 @@ You can also mount a host directory as a data volume:
 ```shell
 docker run -d \
   -p 5000:5000 \
-  -v /srv/osrm/moscow-foot/data:/data \
-  -v /srv/osrm/moscow-foot/extracts:/extracts \
-  -v /srv/osrm/moscow-foot/profiles:/profiles \
+  -v /srv/osrm/data:/data \
+  -v /srv/osrm/extracts:/extracts \
+  -v /srv/osrm/profiles:/profiles \
   --name osrm \
   stepankuzmin/osrm
 ```
 
-This command mounts the host directory, `/data`, into the container at `/data`, `/extracts` into `/extracts` and `/profiles` into `/profiles`.
+This command mounts the host directory, `/srv/osrm/data`, into the container at `/data`, `/srv/osrm/extracts` into `/extracts` and `/srv/osrm/profiles` into `/profiles`.
 
 ## Documentation
 
