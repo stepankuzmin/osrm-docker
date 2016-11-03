@@ -27,8 +27,8 @@ RUN mkdir -p /usr/src/osrm-backend/build \
   && cd /usr/src/osrm-backend/build \
   && cmake .. -DCMAKE_BUILD_TYPE=Release \
   && cmake --build . \
-  && cmake --build . --target install
-  && mkdir /data
+  && cmake --build . --target install \
+  && mkdir /data \
   && cp -r /usr/src/osrm-backend/profiles /data
 
 COPY entrypoint.sh entrypoint.sh
