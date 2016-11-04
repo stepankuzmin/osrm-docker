@@ -15,15 +15,15 @@ _sig() {
 
 trap _sig SIGKILL SIGTERM SIGHUP SIGINT EXIT
 
-if [ ! -f $OSRM ]; then
-  if [ ! -f $PBF ]; then
+if [ ! -f /data/$OSRM ]; then
+  if [ ! -f /extracts/$PBF ]; then
     curl $URL > /extracts/$PBF
   fi
-  cd /data
-  osrm-extract -p /profiles/$PROFILE /extracts/$PBF
-  osrm-contract $OSRM
+  cp /extracts/$PBF /data
+  osrm-extract -p /profiles/$PROFILE /data/$PBF
+  osrm-contract /data/$OSRM
 fi
 
-osrm-routed $OSRM &
+osrm-routed /data/$OSRM &
 child=$!
 wait "$child"
