@@ -37,6 +37,19 @@ docker run -d \
 
 This command mounts the host directory, `/srv/osrm/data`, into the container at `/data`, `/srv/osrm/extracts` into `/extracts` and `/srv/osrm/profiles` into `/profiles`.
 
+You can run OSRM with custom profiles with:
+
+```shell
+docker create \
+  -p 5000:5000 \
+  --name osrm \
+  stepankuzmin/osrm \
+  "https://s3.amazonaws.com/metro-extracts.mapzen.com/moscow_russia.osm.pbf" sidewalks
+
+docker cp sidewalks.lua osrm:/profiles/
+docker start osrm
+```
+
 ## Documentation
 
 - [osrm-routed HTTP API documentation](https://github.com/Project-OSRM/osrm-backend/blob/master/docs/http.md)
