@@ -15,6 +15,11 @@ Where `<url>` is osm.pbf url and `<profile>` is one of the [OSRM profiles](https
 
 * stepless - default foot profile excluding `steps`.
 
+## Features
+
+* Custom profiles
+* [LuaSQL](https://keplerproject.github.io/luasql/) with PostgreSQL support
+
 ## Usage:
 
 This will create docker container with mapzen extract processed using default car profile

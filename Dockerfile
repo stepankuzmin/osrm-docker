@@ -17,6 +17,8 @@ RUN apt-get -yqq update \
   libtbb-dev \
   libxml2-dev \
   libzip-dev \
+  lua-sql-postgres \
+  lua-sql-postgres-dev \
   lua5.2 \
   pkg-config
 
