@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER Stepan Kuzmin <to.stepan.kuzmin@gmail.com>
 
-ENV OSRM_VERSION 5.6.5
+ENV OSRM_VERSION 5.7.0
 
 RUN apt-get -yqq update \
   && apt-get -yqq install \
